@@ -1,0 +1,19 @@
+- name: "Adding users"
+  hosts: all
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: Add user Priya
+      user:
+        name: Priya
+        state: present
+    - name: Add group HCL
+      group:
+        name: HCLtech
+        state: present      
+    - name: Add user Jack
+      user:
+        name: Jack
+        state: present
+        group: HCLtech
+
