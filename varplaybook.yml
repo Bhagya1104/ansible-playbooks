@@ -1,0 +1,15 @@
+- name: "copy files"
+  hosts: all
+  become: yes
+  vars:
+    source: /home/devops/Test.txt
+    dest: /home/devops/Testing/
+  tasks:
+    - name: "copy files"
+      copy:
+        src: "{{source}}"
+        dest: "{{dest}}"
+        owner: devops
+        group: root
+        mode: 777
+
